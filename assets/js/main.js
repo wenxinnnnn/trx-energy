@@ -6,9 +6,10 @@
 (function () {
   "use strict";
 
-  /* ---------- Matrix Canvas ---------- */
-  var canvas = document.getElementById("matrix-canvas");
-  if (canvas) {
+  /* ---------- Matrix Canvas (deferred to after load) ---------- */
+  window.addEventListener("load", function () {
+    var canvas = document.getElementById("matrix-canvas");
+    if (!canvas) return;
     var ctx = canvas.getContext("2d");
     var HEX_CHARS = "0123456789ABCDEF";
     var FONT_SIZE = 14;
@@ -39,7 +40,7 @@
     resize();
     window.addEventListener("resize", resize);
     setInterval(draw, 50);
-  }
+  });
 
   /* ---------- FAQ Accordion ---------- */
   document.querySelectorAll(".faq-item").forEach(function (item) {
