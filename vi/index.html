@@ -71,6 +71,7 @@
         <span class="logo-text">TRX<em>Energy</em></span>
       </a>
       <nav class="main-nav" role="navigation" aria-label="Điều hướng">
+        <a href="#calculator">Tính toán</a>
         <a href="#pricing">Gói cước</a>
         <a href="#how-it-works">Cách dùng</a>
         <a href="#faq">FAQ</a>
@@ -136,6 +137,43 @@
             <span class="copy-feedback" aria-live="polite"></span>
           </button>
           <p class="pay-address-desc">Chuyển <strong>2 TRX</strong> (gói cơ bản) — nhận ngay <strong>65,000</strong> đơn vị năng lượng</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CALCULATOR ===== -->
+    <section class="calc-section" id="calculator" aria-labelledby="calc-title">
+      <div class="container">
+        <h2 id="calc-title" class="section-title">Máy Tính Tiết Kiệm</h2>
+        <p class="section-subtitle">Nhập số lần chuyển USDT mỗi ngày để xem bạn tiết kiệm được bao nhiêu khi thuê năng lượng</p>
+        <div class="calc-card">
+          <div class="calc-input-group">
+            <label for="calc-transfers" class="calc-label">Số lần chuyển USDT mỗi ngày</label>
+            <div class="calc-slider-wrap">
+              <input type="range" id="calc-slider" min="1" max="200" value="10" class="calc-slider" aria-label="Thanh trượt số lần chuyển" />
+              <input type="number" id="calc-transfers" min="1" max="10000" value="10" class="calc-number" aria-label="Số lần chuyển mỗi ngày" />
+            </div>
+          </div>
+          <div class="calc-results">
+            <div class="calc-result-item calc-result-before">
+              <span class="calc-result-label">Không có năng lượng (mỗi tháng)</span>
+              <span class="calc-result-value" id="calc-before">4,050 TRX</span>
+              <span class="calc-result-sub" id="calc-before-usd">≈ $1,013</span>
+            </div>
+            <div class="calc-result-arrow" aria-hidden="true">→</div>
+            <div class="calc-result-item calc-result-after">
+              <span class="calc-result-label">Với thuê năng lượng (mỗi tháng)</span>
+              <span class="calc-result-value" id="calc-after">600 TRX</span>
+              <span class="calc-result-sub" id="calc-after-usd">≈ $150</span>
+            </div>
+            <div class="calc-result-arrow" aria-hidden="true">→</div>
+            <div class="calc-result-item calc-result-save">
+              <span class="calc-result-label">Tiết kiệm mỗi tháng</span>
+              <span class="calc-result-value" id="calc-save">3,450 TRX</span>
+              <span class="calc-result-sub" id="calc-save-pct">Tiết kiệm 85%</span>
+            </div>
+          </div>
+          <p class="calc-note">* Dựa trên 13,5 TRX bị đốt mỗi giao dịch (không có năng lượng) so với 2 TRX với gói cơ bản. Giá tham chiếu TRX $0,25.</p>
         </div>
       </div>
     </section>
@@ -301,6 +339,7 @@
       <nav class="footer-nav" aria-label="Điều hướng">
         <h3>Điều Hướng</h3>
         <ul>
+          <li><a href="#calculator">Tính toán</a></li>
           <li><a href="#pricing">Gói cước</a></li>
           <li><a href="#how-it-works">Cách dùng</a></li>
           <li><a href="#faq">FAQ</a></li>

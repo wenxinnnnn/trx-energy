@@ -209,7 +209,10 @@
       document.getElementById("calc-after").textContent  = fmtTRX(after);
       document.getElementById("calc-after-usd").textContent  = fmtUSD(after);
       document.getElementById("calc-save").textContent   = fmtTRX(saved);
-      document.getElementById("calc-save-pct").textContent = "节省 " + pct + "%";
+      var lang = document.documentElement.lang || "zh-CN";
+      var saveLabelMap = { "en": "Saved ", "ru": "Экономия ", "vi": "Tiết kiệm " };
+      var saveLabel = saveLabelMap[lang] || "节省 ";
+      document.getElementById("calc-save-pct").textContent = saveLabel + pct + "%";
     }
 
     slider.addEventListener("input", function () {

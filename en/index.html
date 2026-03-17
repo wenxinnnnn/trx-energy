@@ -236,6 +236,7 @@
         <span class="logo-text">TRX<em>Energy</em></span>
       </a>
       <nav class="main-nav" role="navigation" aria-label="Main navigation">
+        <a href="#calculator">Calculator</a>
         <a href="#pricing">Pricing</a>
         <a href="#how-it-works">How It Works</a>
         <a href="#faq">FAQ</a>
@@ -334,6 +335,43 @@
             <span class="trust-value trust-badge">On-Chain</span>
             <span class="trust-label">Fully Transparent</span>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CALCULATOR ===== -->
+    <section class="calc-section" id="calculator" aria-labelledby="calc-title">
+      <div class="container">
+        <h2 id="calc-title" class="section-title">Savings Calculator</h2>
+        <p class="section-subtitle">Enter your daily USDT transfer count to see how much you save with energy rental</p>
+        <div class="calc-card">
+          <div class="calc-input-group">
+            <label for="calc-transfers" class="calc-label">Daily USDT Transfers</label>
+            <div class="calc-slider-wrap">
+              <input type="range" id="calc-slider" min="1" max="200" value="10" class="calc-slider" aria-label="Transfer count slider" />
+              <input type="number" id="calc-transfers" min="1" max="10000" value="10" class="calc-number" aria-label="Daily transfer count" />
+            </div>
+          </div>
+          <div class="calc-results">
+            <div class="calc-result-item calc-result-before">
+              <span class="calc-result-label">Without Energy (monthly)</span>
+              <span class="calc-result-value" id="calc-before">4,050 TRX</span>
+              <span class="calc-result-sub" id="calc-before-usd">≈ $1,013</span>
+            </div>
+            <div class="calc-result-arrow" aria-hidden="true">→</div>
+            <div class="calc-result-item calc-result-after">
+              <span class="calc-result-label">With Energy Rental (monthly)</span>
+              <span class="calc-result-value" id="calc-after">600 TRX</span>
+              <span class="calc-result-sub" id="calc-after-usd">≈ $150</span>
+            </div>
+            <div class="calc-result-arrow" aria-hidden="true">→</div>
+            <div class="calc-result-item calc-result-save">
+              <span class="calc-result-label">Monthly Savings</span>
+              <span class="calc-result-value" id="calc-save">3,450 TRX</span>
+              <span class="calc-result-sub" id="calc-save-pct">Saved 85%</span>
+            </div>
+          </div>
+          <p class="calc-note">* Based on 13.5 TRX burned per transfer (no energy) vs. 2 TRX with Basic plan. TRX reference price $0.25.</p>
         </div>
       </div>
     </section>
@@ -586,6 +624,7 @@
       <nav class="footer-nav" aria-label="Footer navigation">
         <h3>Quick Links</h3>
         <ul>
+          <li><a href="#calculator">Calculator</a></li>
           <li><a href="#pricing">Pricing</a></li>
           <li><a href="#how-it-works">How It Works</a></li>
           <li><a href="#faq">FAQ</a></li>
