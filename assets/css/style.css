@@ -1078,6 +1078,21 @@ img { max-width: 100%; display: block; }
   position: relative;
 }
 
+/* 桥接触发器与下拉之间的空隙（原 8px gap 不在父级盒子的 hover 区域内，移入即关菜单） */
+.lang-switcher::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 12px;
+  z-index: 49;
+  pointer-events: none;
+}
+.lang-switcher:hover::before {
+  pointer-events: auto;
+}
+
 .lang-current {
   font-size: 0.85rem;
   color: var(--text-secondary);
