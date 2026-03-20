@@ -1,46 +1,10 @@
 /* ============================================================
    TRX Energy - Main JS
-   Matrix · FAQ accordion · Copy address · Counter · Calculator
+   FAQ accordion · Copy address · Counter · Calculator
    ============================================================ */
 
 (function () {
   "use strict";
-
-  /* ---------- Matrix Canvas (deferred to after load) ---------- */
-  window.addEventListener("load", function () {
-    var canvas = document.getElementById("matrix-canvas");
-    if (!canvas) return;
-    var ctx = canvas.getContext("2d");
-    var HEX_CHARS = "0123456789ABCDEF";
-    var FONT_SIZE = 14;
-    var columns, drops;
-
-    function resize() {
-      canvas.width = canvas.offsetWidth;
-      canvas.height = canvas.offsetHeight;
-      columns = Math.floor(canvas.width / FONT_SIZE);
-      drops = Array.from({ length: columns }, function () {
-        return Math.random() * -canvas.height;
-      });
-    }
-
-    function draw() {
-      ctx.fillStyle = "rgba(24, 26, 32, 0.05)";
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      ctx.fillStyle = "#FCD535";
-      ctx.font = FONT_SIZE + "px monospace";
-      for (var i = 0; i < drops.length; i++) {
-        var char = HEX_CHARS[Math.floor(Math.random() * HEX_CHARS.length)];
-        ctx.fillText(char, i * FONT_SIZE, drops[i]);
-        if (drops[i] > canvas.height && Math.random() > 0.975) drops[i] = 0;
-        drops[i] += FONT_SIZE;
-      }
-    }
-
-    resize();
-    window.addEventListener("resize", resize);
-    setInterval(draw, 50);
-  });
 
   /* ---------- FAQ Accordion ---------- */
   document.querySelectorAll(".faq-item").forEach(function (item) {

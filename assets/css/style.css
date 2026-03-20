@@ -219,15 +219,45 @@ img { max-width: 100%; display: block; }
   align-items: center;
   overflow: hidden;
   padding: 80px 0;
+  background-color: #12141a;
+  background-image:
+    radial-gradient(ellipse 100% 80% at 50% -30%, rgba(252, 213, 53, 0.14), transparent 50%),
+    radial-gradient(ellipse 55% 45% at 95% 25%, rgba(252, 213, 53, 0.07), transparent),
+    radial-gradient(ellipse 45% 50% at 5% 75%, rgba(46, 204, 113, 0.05), transparent),
+    linear-gradient(180deg, #15171e 0%, var(--bg-primary) 45%, #14161c 100%);
 }
 
-#matrix-canvas {
+.hero::before {
+  content: "";
   position: absolute;
   inset: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.12;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 12%, black 88%, transparent 100%);
   pointer-events: none;
+  z-index: 0;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 90% 55% at 50% 115%, rgba(252, 213, 53, 0.1), transparent 60%);
+  pointer-events: none;
+  z-index: 0;
+  animation: hero-ambient 14s ease-in-out infinite alternate;
+}
+
+@keyframes hero-ambient {
+  from { opacity: 0.55; transform: scale(1); }
+  to { opacity: 1; transform: scale(1.06); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::after { animation: none; opacity: 0.75; }
 }
 
 .hero-content {
