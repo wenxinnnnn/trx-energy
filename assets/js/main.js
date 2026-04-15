@@ -151,7 +151,7 @@
   if (slider && numInput) {
     var TRX_PRICE = 0.25;        // USD per TRX
     var COST_NO_ENERGY = 13.5;   // TRX per transfer without energy
-    var COST_WITH_ENERGY = 2;    // TRX per transfer with basic package
+    var COST_WITH_ENERGY = 2.5;  // TRX per transfer with basic package
 
     function fmtTRX(n) {
       return n.toLocaleString("zh-CN", { maximumFractionDigits: 0 }) + " TRX";
